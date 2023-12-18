@@ -1,4 +1,5 @@
- 
+const apiKey = ["your_api_key"];
+
 const autoCompleteConfig={
   renderOption(movie) {
     const imgSrc =  movie.Poster === 'N/A' ? '' : movie.Poster;
@@ -13,7 +14,7 @@ const autoCompleteConfig={
   async fetchData(searchTerm) {
     const response = await axios.get('http://www.omdbapi.com', {
       params: {
-          apikey: "8195434c",
+          apikey: apiKey,
           s: searchTerm
       }
     }); 
@@ -47,7 +48,7 @@ let rightMovie;
 const onMovieSelect = async (movie, summaryElement, side) => {
   const response = await axios.get('http://www.omdbapi.com', {
     params: {
-        apikey: "8195434c",
+        apikey: apiKey,
         i: movie.imdbID
     }
   }); 
