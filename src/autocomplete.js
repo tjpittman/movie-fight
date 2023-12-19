@@ -2,10 +2,11 @@ const createAutoComplete = ({
     renderOption, 
     onOptionSelect, 
     inputValue, 
-    fetchData,
+    getSearchResults,
     root
-}) => {    
-    root.innerHTML = `
+}) => {
+  
+  root.innerHTML = `
      <label><b>Search</b></label>
      <input class="input"/>
      <div class="dropdown">
@@ -19,9 +20,11 @@ const createAutoComplete = ({
     const dropdown = root.querySelector('.dropdown');
     const resultsWrapper = root.querySelector('.results');
 
-    const onInput = async event => { 
-      const items = await fetchData(event.target.value);          
+    const onInput = async (event) => { 
+      const items = await getSearchResults(event.target.value);          
       
+      console.log(items);
+
       if(!items.length){
         dropdown.classList.remove('is-active');
         return;

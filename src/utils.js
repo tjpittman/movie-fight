@@ -9,3 +9,13 @@ const debounce = (func, delay = 500) => {
         }, delay); 
     };
 };
+
+const  fetchData = async (url, params) => {     
+    const response = await axios.get(url, {params: params});
+     
+    if(response.data.Error){
+      return [];
+    };
+    
+    return response;    
+}; 
