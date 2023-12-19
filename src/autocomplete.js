@@ -41,7 +41,7 @@ const createAutoComplete = ({
             dropdown.classList.remove('is-active');
             input.value = inputValue(item)
             onOptionSelect(item);
-          })
+          });
     
           resultsWrapper.appendChild(listItem);
       }
@@ -49,7 +49,7 @@ const createAutoComplete = ({
 
     input.addEventListener('input', debounce(onInput));
   
-  document.addEventListener('click', event => {
+  document.addEventListener('click', (event) => {
     if(!root.contains(event.target)){
         dropdown.classList.remove('is-active');
     }

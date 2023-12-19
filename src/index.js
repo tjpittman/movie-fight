@@ -1,4 +1,4 @@
-const apiKey = "8195434c";
+const apiKey = "put api key here";
 const apiUrl = 'http://www.omdbapi.com';
 
 const autoCompleteConfig={
