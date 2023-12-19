@@ -21,7 +21,7 @@ const autoCompleteConfig={
     return response.data.Search;
     
   }
-};
+}; 
 
 createAutoComplete({
   ...autoCompleteConfig,
@@ -39,7 +39,7 @@ createAutoComplete({
     document.querySelector('.tutorial').classList.add('is-hidden')
     onMovieSelect(movie, document.querySelector('#right-summary'), 'right');
   }
-});
+}); 
 
 let leftMovie;
 let rightMovie;

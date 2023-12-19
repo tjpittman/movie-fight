@@ -1,9 +1,9 @@
 const createAutoComplete = ({
-    renderOption, 
-    onOptionSelect, 
+    renderOption,      
     inputValue, 
     getSearchResults,
-    root
+    root,
+    onOptionSelect
 }) => {
   
   root.innerHTML = `
@@ -48,11 +48,11 @@ const createAutoComplete = ({
     };
 
     input.addEventListener('input', debounce(onInput));
-  
-  document.addEventListener('click', (event) => {
-    if(!root.contains(event.target)){
+    
+    document.addEventListener('click', (event) => {
+      if(!root.contains(event.target)){
         dropdown.classList.remove('is-active');
-    }
-  });
+      }
+    });
 };
 
